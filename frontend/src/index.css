@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .homepage-bg {
+    @apply bg-no-repeat bg-center bg-cover bg-fixed;
+    background-image: url("/homepagebg.webp");
+  }
+
+  .poke-arena-bg {
+    @apply bg-no-repeat bg-center bg-cover bg-fixed;
+    background-image: url("/poke_arena_fightbg.webp");
+  }
+
+  .poke-opp-select {
+    @apply bg-no-repeat bg-center bg-cover bg-fixed;
+    background-image: url("/pokemon_opponent_selection_pagebg.webp");
+  }
+
+  .poke-select {
+    @apply bg-no-repeat bg-center bg-cover bg-fixed;
+    background-image: url("/pokemon_selection_pagebg.webp");
+  }
+
+  .text-shadow {
+    text-shadow:
+      -1px 0 black,
+      0 1px black,
+      5px 0 black,
+      0 -1px black;
+  }
+}
+
+.playerPokemon {
+  @apply animate-bounce;
+}
+
+.opponentPokemon {
+  @apply animate-bounce;
+}
+
+@keyframes attack {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(350px, -300px); } /* Adjust the second value to negative for upward movement and increased the distance to 300px */
+  100% { transform: translate(0, 0); }
+}
+
+.attack-animation {
+  animation: attack 0.5s ease-in-out;
+}
+@keyframes opponent-attack {
+  0% { transform: translateX(0); }
+  50% { transform: translate(-3500px, 300px); } /* Adjust the second value to positive for downward movement towards the playerpokemon */
+  100% { transform: translateX(0); }
+}
+
+.opponent-attack-animation {
+  animation: opponent-attack 0.5s ease-in-out;
+}
+
+
+@keyframes play {
+  to {
+    object-position: 100% 0;
+  }
+}
+
+.loading-screen {
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-button {
+  width: 200px;
+  height: 20px;
+  background-color: #ddd;
+  animation: loading 3s linear infinite;
+}
