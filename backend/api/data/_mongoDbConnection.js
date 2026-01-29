@@ -2,10 +2,7 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 dotenv.config();
 
-const username = process.env.USERNAME;
-const password = process.env.PASSWORD;
-
-const connectionString = `mongodb+srv://${username}:${password}@bootcamp.jkrxi1d.mongodb.net/pokefight`;
+const connectionString = process.env.MONGODB_URI;
 
 mongoose
   .connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true })
