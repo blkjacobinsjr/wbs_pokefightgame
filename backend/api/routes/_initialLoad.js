@@ -2,7 +2,7 @@ import { Router } from "express";
 import { createRequire } from "node:module";
 const require = createRequire(import.meta.url);
 const data = require("../json/master_pokedex.json");
-import Pokemon from "../schema/pokemonSchema.js";
+import Pokemon from "../schema/_pokemonSchema.js";
 import asyncHandler from "express-async-handler";
 
 const initialLoad = Router();
